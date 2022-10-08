@@ -3,3 +3,4 @@
 name = input("Your name")
 # The type will be string
 
+test = None
