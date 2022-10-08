@@ -4,4 +4,6 @@ class_num = 57
 avg_salary = 114514
 message = 'Pyton class number is %s, average salary is %s' % (class_num, avg_salary)
 print(message)
+# format
+print(f'Pyton class number is {class_num}, average salary is {avg_salary}')
 
