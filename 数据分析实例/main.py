@@ -30,6 +30,6 @@ bar.add_yaxis('consumption', list(data_dict.values()), label_opts=LabelOpts(is_s
 bar.set_global_opts(
     title_opts=TitleOpts(title='everyday consumption')
 )
-bar.render('everyday consumption.html')
+bar.render('everyday_consumption.html')
 
 
