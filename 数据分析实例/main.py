@@ -2,6 +2,10 @@
 # Time 2022/10/21 10:19
 from file_define import FileReader, TextReader, JsonFileReader
 from data_define import Record
+from pyecharts.charts import Bar
+from pyecharts.options import *
+from pyecharts.globals import ThemeType
+
 
 text_file_reader = TextReader('data/2011年1月销售数据.txt')
 json_file_reader = JsonFileReader('data/2011年2月销售数据JSON.txt')
@@ -19,5 +23,13 @@ for record in all_data:
     else:
         data_dict[record.data] = record.money
 
-print(data_dict)
+# 可视化图表开发
+bar = Bar(init_opts=InitOpts(theme=ThemeType.LIGHT))
+bar.add_xaxis(list(data_dict.keys()))
+bar.add_yaxis('consumption', list(data_dict.values()), label_opts=LabelOpts(is_show=False))
+bar.set_global_opts(
+    title_opts=TitleOpts(title='everyday consumption')
+)
+bar.render('everyday consumption.html')
+
 
